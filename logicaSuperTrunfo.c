@@ -108,15 +108,119 @@ int main() {
     //printf("PIB da cidade: R$%.2lf\n", pibdois);
     //printf("Densidade populacional: %.1f\n", densidadepopdois); 
     //printf("PIB per capita: R$%.2lf\n", pibcapitadois); 
+    //printf("SuperTrunfo: %.2f\n", superpoderdois); 
 
+    int parametro;
+    printf("Escolha o parametro a ser comparado!\n");
+    printf("1 - Polulação!\n");
+    printf("2 - Pontos Turísticos!\n");
+    printf("3 - Área da cidade!\n");
+    printf("4 - PIB da cidade!\n");
+    printf("5 - Densidade populacional!\n");
+    printf("6 - PIB per capita!\n");
+    printf("7 - SuperTrunfo!\n");
+    scanf("%d", &parametro);
 
-    if(pontosturisticosum > pontosturisticosdois){
-        printf("A Carta N1 tem mais pontos turisticos que a Carta N2\n");
-        printf("Pontos turisticos Carta N1: %d  Pontos turisticos Carta N2 %d",pontosturisticosum, pontosturisticosdois);
+    switch (parametro)
+    {
+    case 1:
+        printf("\nAtributo: Populacao\n");
+        printf("%s: %lu | %s: %lu\n", nomeum, populacaoum, nomedois, populacaodois);
+        if (populacaoum > populacaodois) {
+            printf("Vencedor: %s\n", nomeum);
+        } else if (populacaoum < populacaodois) {
+            printf("Vencedor: %s\n", nomedois);
+        } else {
+            printf("Resultado: Empate!\n");
+        }
+        break;
+
+    case 2:
+        printf("\nAtributo: Pontos Turisticos\n");
+        printf("%s: %d | %s: %d\n", nomeum, pontosturisticosum, nomedois, pontosturisticosdois);
+        if (pontosturisticosum > pontosturisticosdois) {
+            printf("Vencedor: %s\n", nomeum);
+        } else if (pontosturisticosum < pontosturisticosdois) {
+            printf("Vencedor: %s\n", nomedois);
+        } else {
+            printf("Resultado: Empate!\n");
+        }
+        break;
+
+    case 3:
+        printf("\nAtributo: Area\n");
+        printf("%s: %.2f km² | %s: %.2f km²\n", nomeum, areaum, nomedois, areadois);
+        if (areaum > areadois) {
+            printf("Vencedor: %s\n", nomeum);
+        } else if (areaum < areadois) {
+            printf("Vencedor: %s\n", nomedois);
+        } else {
+            printf("Resultado: Empate!\n");
+        }
+        break;
+
+    case 4:
+        printf("\nAtributo: PIB\n");
+        printf("%s: R$%.2lf | %s: R$%.2lf\n", nomeum, pibum, nomedois, pibdois);
+        if (pibum > pibdois) {
+            printf("Vencedor: %s\n", nomeum);
+        } else if (pibum < pibdois) {
+            printf("Vencedor: %s\n", nomedois);
+        } else {
+            printf("Resultado: Empate!\n");
+        }
+        break;
+
+    case 5:
+        // Lembre-se: regra invertida, o menor valor vence.
+        printf("\nAtributo: Densidade Demografica\n");
+        printf("%s: %.1f hab/km² | %s: %.1f hab/km²\n", nomeum, densidadepopum, nomedois, densidadepopdois);
+        if (densidadepopum < densidadepopdois) {
+            printf("Vencedor: %s (menor densidade vence)\n", nomeum);
+        } else if (densidadepopum > densidadepopdois) {
+            printf("Vencedor: %s (menor densidade vence)\n", nomedois);
+        } else {
+            printf("Resultado: Empate!\n");
+        }
+        break;
+
+    case 6:
+        printf("\nAtributo: PIB per capita\n");
+        printf("%s: R$%.2lf | %s: R$%.2lf\n", nomeum, pibcapitaum, nomedois, pibcapitadois);
+        if (pibcapitaum > pibcapitadois) {
+            printf("Vencedor: %s\n", nomeum);
+        } else if (pibcapitaum < pibcapitadois) {
+            printf("Vencedor: %s\n", nomedois);
+        } else {
+            printf("Resultado: Empate!\n");
+        }
+        break;
+
+    case 7:
+        printf("\nAtributo: SuperTrunfo\n");
+        printf("%s: %.2f | %s: %.2f\n", nomeum, superpoderum, nomedois, superpoderdois);
+        if (superpoderum > superpoderdois) {
+            printf("Vencedor: %s\n", nomeum);
+        } else if (superpoderum < superpoderdois) {
+            printf("Vencedor: %s\n", nomedois);
+        } else {
+            printf("Resultado: Empate!\n");
+        }
+        break;
+        
+    default:
+        printf("Opcao invalida! Escolha um numero do menu.\n");
+        break;
     }
-    else{
-        printf("A Carta N2 tem mais pontos turisticos que a Carta N1\n");
-        printf("Pontos turisticos Carta N2: %d  Pontos turisticos Carta N1: %d",pontosturisticosdois, pontosturisticosum);
-    }
+
+    //if(pontosturisticosum > pontosturisticosdois){
+       //printf("A Carta N1 tem mais pontos turisticos que a Carta N2\n");
+        //printf("Pontos turisticos Carta N1: %d  Pontos turisticos Carta N2 %d",pontosturisticosum, pontosturisticosdois);
+    //}
+    //else{
+        //printf("A Carta N2 tem mais pontos turisticos que a Carta N1\n");
+        //printf("Pontos turisticos Carta N2: %d  Pontos turisticos Carta N1: %d",pontosturisticosdois, pontosturisticosum);
+    //}
+    
     return 0;
 }
